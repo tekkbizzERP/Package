@@ -1,20 +1,29 @@
 body {
   margin: 0;
   font-family: Arial;
-  background: #0a1f44; /* DARK BLUE 🔥 */
+  background: #0a1f44;
   color: white;
+  overflow-x: hidden;
 }
 
 /* HEADER */
 header {
-  padding: 20px;
-  font-size: 20px;
-  font-weight: bold;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  max-height: 60px;
+  width: auto;
 }
 
 /* TITLE */
 h1 {
   text-align: center;
+  margin-top: 20px;
 }
 
 /* CARDS */
@@ -23,6 +32,9 @@ h1 {
   justify-content: center;
   gap: 25px;
   padding: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .card {
@@ -33,6 +45,14 @@ h1 {
   border-radius: 15px;
   transition: 0.3s;
   position: relative;
+  text-align: left;
+
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 /* SCROLL INSIDE CARD */
@@ -44,8 +64,8 @@ h1 {
 
 /* HOVER EFFECT */
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(0, 162, 255, 0.7);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
 
 /* POPULAR */
@@ -85,7 +105,31 @@ ul {
   list-style: none;
 }
 
-.limit li {
+.list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  line-height: 1.5;
+}
+
+.list li:last-child {
+  border-bottom: none;
+}
+
+.list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #444;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+.list.no li {
   color: red;
 }
 
@@ -95,27 +139,26 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-
   background: linear-gradient(45deg, #6c5ce7, #00c6ff);
   color: white;
   font-weight: bold;
 }
 
-/* only card buttons full width */
 .card button {
   width: 100%;
 }
 
-/* CLICK EFFECT */
 button:active {
   transform: scale(0.95);
 }
 
-/* COMPARE */
+/* COMPARE BUTTON */
 .compare-btn {
   width: 250px;
   margin: 20px auto;
   display: block;
+  position: relative;
+  z-index: 5;
 }
 
 /* TABLE */
@@ -123,6 +166,7 @@ button:active {
   background: white;
   color: black;
   padding: 40px;
+  overflow-x: auto;
 }
 
 .hidden {
@@ -131,6 +175,7 @@ button:active {
 
 table {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
 }
 
@@ -145,25 +190,18 @@ th {
   color: white;
 }
 
-
-/* ========================= */
-/* 🔥 NEW ADD (DO NOT REMOVE) */
-/* ========================= */
-
-/* PLAN TITLE */
+/* PLAN TEXT */
 .plan-title {
   margin: 0;
   font-size: 20px;
 }
 
-/* TAG LINE */
 .plan-tag {
   font-size: 13px;
   color: #666;
   margin-bottom: 10px;
 }
 
-/* PRICE BOX */
 .price-box {
   margin: 15px 0;
 }
@@ -178,66 +216,13 @@ th {
   font-weight: bold;
 }
 
-/* ✔ FEATURES */
-.list li {
-  position: relative;
-  padding-left: 18px;
-}
-
-.list li::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background: #444;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  top: 8px;
-}
-
-/* NOTE TEXT */
 .note {
   font-size: 12px;
-  margin-top: 10px;
-}
-
-.list.no li {
-  color: red;
-}
-
-.card {
-  text-align: left; /* 🔥 important */
-}
-
-.features {
-  text-align: left;
-}
-
-/* LIST SPACING */
-.list li {
-  margin-bottom: 8px;
-  line-height: 1.5;
-}
-
-/* HEADING SPACING */
-.features h4 {
-  margin-top: 15px;
-  margin-bottom: 8px;
-}
-
-/* SECTION GAP */
-.features {
-  margin-top: 10px;
-}
-
-/* NOTE TEXT SPACING */
-.note {
   margin-top: 15px;
   line-height: 1.4;
 }
-.list li {
-  margin-bottom: 10px;
-}
+
+/* BACKGROUND ANIMATION */
 body::before {
   content: "";
   position: fixed;
@@ -252,85 +237,11 @@ body::before {
 }
 
 @keyframes moveBg {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(100px, 100px);
-  }
+  from { transform: translate(0,0); }
+  to { transform: translate(100px,100px); }
 }
 
-/* button fix */
-.compare-btn {
-  position: relative;
-  z-index: 5;
-}
-  
-}
-
-.main-header {
-  width: 100%;
-  padding: 30px 0;   /* 🔥 pehle 15 tha */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-/* LOGO PERFECT SIZE */
-.logo {
-  height: 150px !important;
-  width: auto !important;
-  display: block;
-}
-
-/* ========================= */
-/* 🔥 CARD FINAL UI UPGRADE */
-/* ========================= */
-
-.card {
-  min-height: 550px; /* lamba card */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-
-/* TEXT ALIGN */
-.card h3,
-.card p,
-.card li {
-  text-align: left;
-}
-
-/* FEATURES SECTION */
-.features {
-  margin-top: 15px;
-}
-
-/* LIST STYLE */
-.list li {
-  margin-bottom: 10px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #eee; /* line under each item */
-  line-height: 1.5;
-}
-
-/* REMOVE LAST LINE */
-.list li:last-child {
-  border-bottom: none;
-}
-
-/* HOVER EFFECT (smooth standout) */
-.card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-}
-
+/* INFO BOX */
 .info-box {
   background: rgba(255,255,255,0.1);
   padding: 15px;
@@ -342,47 +253,20 @@ body::before {
   backdrop-filter: blur(5px);
 }
 
-.info-box strong {
-  color: #fff;
-}
-
 .note2 {
   margin-top: 10px;
   font-size: 12px;
   color: #ccc;
 }
+
 /* ========================= */
-/* 📱 RESPONSIVE DESIGN */
+/* 📱 MOBILE RESPONSIVE */
 /* ========================= */
 
-.cards {
-  flex-wrap: wrap; /* 🔥 cards neeche aa jayenge */
-}
-
-/* TABLE SCROLL MOBILE */
-#tableSection {
-  overflow-x: auto;
-}
-
-/* MOBILE */
 @media (max-width: 768px) {
 
   h1 {
     font-size: 22px;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .card {
-    width: 90%; /* 🔥 full width look */
-  }
-
-  .features {
-    max-height: none; /* scroll hatado mobile pe */
   }
 
   header {
@@ -393,13 +277,27 @@ body::before {
     max-height: 50px;
   }
 
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .card {
+    width: 95%;
+    max-width: 400px;
+  }
+
+  .features {
+    max-height: none;
+  }
+
   .compare-btn {
     width: 90%;
   }
 
 }
 
-/* SMALL MOBILE */
 @media (max-width: 480px) {
 
   h1 {
@@ -413,40 +311,6 @@ body::before {
   button {
     padding: 10px;
     font-size: 14px;
-  }
-
-}
-
-/* 🔥 FULL WIDTH FIX */
-.pricing {
-  width: 100%;
-  max-width: 100%;
-}
-
-/* BODY FIX */
-body {
-  overflow-x: hidden;
-}
-
-/* CARDS FIX */
-.cards {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* MOBILE FIX */
-@media (max-width: 768px) {
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .card {
-    width: 95%; /* 🔥 full screen feel */
-    max-width: 400px;
   }
 
 }
