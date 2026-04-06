@@ -416,3 +416,37 @@ body::before {
   }
 
 }
+
+/* 🔥 FULL WIDTH FIX */
+.pricing {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* BODY FIX */
+body {
+  overflow-x: hidden;
+}
+
+/* CARDS FIX */
+.cards {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .card {
+    width: 95%; /* 🔥 full screen feel */
+    max-width: 400px;
+  }
+
+}
