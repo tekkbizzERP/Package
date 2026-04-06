@@ -36,12 +36,12 @@ function resize() {
 resize();
 window.addEventListener("resize", resize);
 
-for (let i = 0; i < 80; i++) {
+for (let i = 0; i < 180; i++) // 🔥 zyada particles {
   particles.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    vx: Math.random() * 0.5,
-    vy: Math.random() * 0.5
+    vx: (Math.random() - 0.5) * 1,
+    vy: (Math.random() - 0.5) * 1
   });
 }
 
@@ -52,7 +52,7 @@ function draw() {
   particles.forEach(p => {
     ctx.fillStyle = "rgba(255,255,255,0.7)";
     ctx.beginPath();
-    ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
     ctx.fill();
   });
 
@@ -63,7 +63,7 @@ function draw() {
       let dy = particles[i].y - particles[j].y;
       let dist = Math.sqrt(dx * dx + dy * dy);
 
-      if (dist < 120) {
+      if (dist < 170) // 🔥 zyada lines connect hongi {
         ctx.strokeStyle = "rgba(255,255,255,0.1)";
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
