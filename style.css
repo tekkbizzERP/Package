@@ -316,11 +316,12 @@ body::before {
 }
 
 .highlight-text {
-  display: block;
-  text-align: center;   /* 🔥 center kar diya */
-  font-size: 14px;
-  font-weight: bold;
+  display: inline-block;
+  background: rgba(108, 92, 231, 0.1);
   color: #6c5ce7;
-  margin: 6px 0 10px 0;
-  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 6px 0;
 }
