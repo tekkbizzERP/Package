@@ -317,11 +317,10 @@ body::before {
 
 .highlight-text {
   display: block;
-  text-align: center;
-  font-size: 13px;
+  text-align: center;   /* 🔥 center kar diya */
+  font-size: 14px;
   font-weight: bold;
   color: #6c5ce7;
   margin: 6px 0 10px 0;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  letter-spacing: 1px;
 }
