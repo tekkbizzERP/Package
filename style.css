@@ -314,11 +314,14 @@ body::before {
   }
 
 }
+
 .highlight-text {
-  font-size: 14px;
+  display: block;
+  text-align: center;
+  font-size: 13px;
   font-weight: bold;
   color: #6c5ce7;
-  margin: 5px 0 8px 0;
+  margin: 6px 0 10px 0;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
